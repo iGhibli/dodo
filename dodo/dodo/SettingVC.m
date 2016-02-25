@@ -7,6 +7,8 @@
 //
 
 #import "SettingVC.h"
+#import "EaseMob.h"
+#import "NSString+Encryption.h"
 
 @interface SettingVC ()
 
@@ -17,12 +19,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
+
+- (IBAction)autoLoginSwitchAction:(UISwitch *)sender {
+    [[EaseMob sharedInstance].chatManager asyncLoginWithUsername:[[NSString decryptUserNameAndPassWord] firstObject] password:[[NSString decryptUserNameAndPassWord] lastObject] completion:^(NSDictionary *loginInfo, EMError *error) {
+        if (!error) {
+            // 设置自动登录
+            [[EaseMob sharedInstance].chatManager setIsAutoLoginEnabled:YES];
+        }
+    } onQueue:nil];
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

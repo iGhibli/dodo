@@ -8,6 +8,7 @@
 
 #import "LoginVC.h"
 #import "EaseMob.h"
+#import "NSString+Encryption.h"
 
 @interface LoginVC ()
 @property (weak, nonatomic) IBOutlet UITextField *userNameTF;
@@ -33,6 +34,7 @@
                 if (!error && loginInfo) {
                     UIStoryboard *ContentSB = [UIStoryboard storyboardWithName:@"Content" bundle:nil];
                     [self presentViewController:[ContentSB instantiateInitialViewController] animated:YES completion:nil];
+                    [NSString encryptUserName:self.userNameTF.text andPassWord:self.passWordTF.text];
                     NSLog(@"登陆成功");
                 }
             } onQueue:nil];

@@ -22,7 +22,7 @@
     //apnsCertName:推送证书名(不需要加后缀)，默认@"istore_dev"。
     [[EaseMob sharedInstance] registerSDKWithAppKey:@"ighibli#dodo" apnsCertName:nil];
     [[EaseMob sharedInstance] application:application didFinishLaunchingWithOptions:launchOptions];
-    
+      
     // Override point for customization after application launch.
     return YES;
 }

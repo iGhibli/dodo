@@ -26,6 +26,7 @@
     [[EaseMob sharedInstance].chatManager asyncRegisterNewAccount:self.userNameTF.text password:self.passWordTF.text withCompletion:^(NSString *username, NSString *password, EMError *error) {
         
         if (!error) {
+            [self dismissViewControllerAnimated:YES completion:nil];
             NSLog(@"注册成功");
         }
     } onQueue:nil];

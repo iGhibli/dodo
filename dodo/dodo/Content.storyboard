@@ -95,15 +95,44 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="8Kd-ly-yKg">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="44" id="8Kd-ly-yKg">
                                 <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8Kd-ly-yKg" id="zg9-zK-Opi">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="设置自动登陆" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yal-Pl-7r9">
+                                            <rect key="frame" x="30" y="11" width="110" height="20"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="20" id="LnS-Gj-G2q"/>
+                                                <constraint firstAttribute="width" constant="110" id="ktj-pm-4G1"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rgV-Cx-do0">
+                                            <rect key="frame" x="521" y="6.5" width="51" height="31"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="31" id="OSt-09-fXq"/>
+                                                <constraint firstAttribute="width" constant="49" id="iKG-Gj-fg4"/>
+                                            </constraints>
+                                            <connections>
+                                                <action selector="autoLoginSwitchAction:" destination="38i-TY-8N1" eventType="valueChanged" id="vUI-6m-Aa2"/>
+                                            </connections>
+                                        </switch>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="rgV-Cx-do0" secondAttribute="trailing" constant="30" id="5BR-Vb-tWG"/>
+                                        <constraint firstItem="Yal-Pl-7r9" firstAttribute="leading" secondItem="zg9-zK-Opi" secondAttribute="leading" constant="30" id="ROz-qF-idN"/>
+                                        <constraint firstItem="rgV-Cx-do0" firstAttribute="centerY" secondItem="zg9-zK-Opi" secondAttribute="centerY" id="RdQ-h4-3aO"/>
+                                        <constraint firstItem="Yal-Pl-7r9" firstAttribute="centerY" secondItem="zg9-zK-Opi" secondAttribute="centerY" id="nw3-H6-Dzd"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
+                        <sections/>
                         <connections>
                             <outlet property="dataSource" destination="38i-TY-8N1" id="hLC-ad-ImO"/>
                             <outlet property="delegate" destination="38i-TY-8N1" id="Y44-Fc-K4d"/>
