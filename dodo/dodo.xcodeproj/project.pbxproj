@@ -27,6 +27,9 @@
 		CCE3CB7F1C7F164200212D91 /* RegisterVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CCE3CB7E1C7F164200212D91 /* RegisterVC.m */; };
 		CCE3CB821C7F16A500212D91 /* RetrievePWVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CCE3CB811C7F16A500212D91 /* RetrievePWVC.m */; };
 		CCE3CB841C7F1ED100212D91 /* Content.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCE3CB831C7F1ED100212D91 /* Content.storyboard */; };
+		CCE3CB891C7F257800212D91 /* ConversationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CCE3CB881C7F257700212D91 /* ConversationVC.m */; };
+		CCE3CB8C1C7F259B00212D91 /* ContactsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CCE3CB8B1C7F259B00212D91 /* ContactsVC.m */; };
+		CCE3CB8F1C7F25A900212D91 /* SettingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CCE3CB8E1C7F25A900212D91 /* SettingVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -141,6 +144,12 @@
 		CCE3CB801C7F16A500212D91 /* RetrievePWVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RetrievePWVC.h; sourceTree = "<group>"; };
 		CCE3CB811C7F16A500212D91 /* RetrievePWVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RetrievePWVC.m; sourceTree = "<group>"; };
 		CCE3CB831C7F1ED100212D91 /* Content.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Content.storyboard; sourceTree = "<group>"; };
+		CCE3CB871C7F257700212D91 /* ConversationVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConversationVC.h; sourceTree = "<group>"; };
+		CCE3CB881C7F257700212D91 /* ConversationVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConversationVC.m; sourceTree = "<group>"; };
+		CCE3CB8A1C7F259B00212D91 /* ContactsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactsVC.h; sourceTree = "<group>"; };
+		CCE3CB8B1C7F259B00212D91 /* ContactsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactsVC.m; sourceTree = "<group>"; };
+		CCE3CB8D1C7F25A900212D91 /* SettingVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingVC.h; sourceTree = "<group>"; };
+		CCE3CB8E1C7F25A900212D91 /* SettingVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -217,12 +226,8 @@
 		CCE3CAF31C7F02A200212D91 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				CCE3CB7A1C7F06C400212D91 /* LoginVC.h */,
-				CCE3CB7B1C7F06C400212D91 /* LoginVC.m */,
-				CCE3CB7D1C7F164200212D91 /* RegisterVC.h */,
-				CCE3CB7E1C7F164200212D91 /* RegisterVC.m */,
-				CCE3CB801C7F16A500212D91 /* RetrievePWVC.h */,
-				CCE3CB811C7F16A500212D91 /* RetrievePWVC.m */,
+				CCE3CB861C7F24F300212D91 /* Content */,
+				CCE3CB851C7F24A200212D91 /* First */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -537,6 +542,32 @@
 			path = resources;
 			sourceTree = "<group>";
 		};
+		CCE3CB851C7F24A200212D91 /* First */ = {
+			isa = PBXGroup;
+			children = (
+				CCE3CB7A1C7F06C400212D91 /* LoginVC.h */,
+				CCE3CB7B1C7F06C400212D91 /* LoginVC.m */,
+				CCE3CB7D1C7F164200212D91 /* RegisterVC.h */,
+				CCE3CB7E1C7F164200212D91 /* RegisterVC.m */,
+				CCE3CB801C7F16A500212D91 /* RetrievePWVC.h */,
+				CCE3CB811C7F16A500212D91 /* RetrievePWVC.m */,
+			);
+			name = First;
+			sourceTree = "<group>";
+		};
+		CCE3CB861C7F24F300212D91 /* Content */ = {
+			isa = PBXGroup;
+			children = (
+				CCE3CB871C7F257700212D91 /* ConversationVC.h */,
+				CCE3CB881C7F257700212D91 /* ConversationVC.m */,
+				CCE3CB8A1C7F259B00212D91 /* ContactsVC.h */,
+				CCE3CB8B1C7F259B00212D91 /* ContactsVC.m */,
+				CCE3CB8D1C7F25A900212D91 /* SettingVC.h */,
+				CCE3CB8E1C7F25A900212D91 /* SettingVC.m */,
+			);
+			name = Content;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -614,6 +645,9 @@
 				CCE3CB7C1C7F06C400212D91 /* LoginVC.m in Sources */,
 				CCE3CA551C7EF5F100212D91 /* main.m in Sources */,
 				CCE3CB821C7F16A500212D91 /* RetrievePWVC.m in Sources */,
+				CCE3CB8F1C7F25A900212D91 /* SettingVC.m in Sources */,
+				CCE3CB891C7F257800212D91 /* ConversationVC.m in Sources */,
+				CCE3CB8C1C7F259B00212D91 /* ContactsVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
