@@ -24,6 +24,9 @@
 		CCE3CB751C7F041400212D91 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = CCE3CB741C7F041400212D91 /* libiconv.tbd */; };
 		CCE3CB771C7F041B00212D91 /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = CCE3CB761C7F041B00212D91 /* libresolv.tbd */; };
 		CCE3CB791C7F042400212D91 /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = CCE3CB781C7F042400212D91 /* libxml2.tbd */; };
+		CCE3CB7C1C7F06C400212D91 /* LoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CCE3CB7B1C7F06C400212D91 /* LoginVC.m */; };
+		CCE3CB7F1C7F164200212D91 /* RegisterVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CCE3CB7E1C7F164200212D91 /* RegisterVC.m */; };
+		CCE3CB821C7F16A500212D91 /* RetrievePWVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CCE3CB811C7F16A500212D91 /* RetrievePWVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -133,6 +136,12 @@
 		CCE3CB741C7F041400212D91 /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
 		CCE3CB761C7F041B00212D91 /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
 		CCE3CB781C7F042400212D91 /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
+		CCE3CB7A1C7F06C400212D91 /* LoginVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginVC.h; sourceTree = "<group>"; };
+		CCE3CB7B1C7F06C400212D91 /* LoginVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginVC.m; sourceTree = "<group>"; };
+		CCE3CB7D1C7F164200212D91 /* RegisterVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterVC.h; sourceTree = "<group>"; };
+		CCE3CB7E1C7F164200212D91 /* RegisterVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterVC.m; sourceTree = "<group>"; };
+		CCE3CB801C7F16A500212D91 /* RetrievePWVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RetrievePWVC.h; sourceTree = "<group>"; };
+		CCE3CB811C7F16A500212D91 /* RetrievePWVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RetrievePWVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -211,6 +220,12 @@
 			children = (
 				CCE3CA591C7EF5F100212D91 /* ViewController.h */,
 				CCE3CA5A1C7EF5F100212D91 /* ViewController.m */,
+				CCE3CB7A1C7F06C400212D91 /* LoginVC.h */,
+				CCE3CB7B1C7F06C400212D91 /* LoginVC.m */,
+				CCE3CB7D1C7F164200212D91 /* RegisterVC.h */,
+				CCE3CB7E1C7F164200212D91 /* RegisterVC.m */,
+				CCE3CB801C7F16A500212D91 /* RetrievePWVC.h */,
+				CCE3CB811C7F16A500212D91 /* RetrievePWVC.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -597,7 +612,10 @@
 			files = (
 				CCE3CA5B1C7EF5F100212D91 /* ViewController.m in Sources */,
 				CCE3CA581C7EF5F100212D91 /* AppDelegate.m in Sources */,
+				CCE3CB7F1C7F164200212D91 /* RegisterVC.m in Sources */,
+				CCE3CB7C1C7F06C400212D91 /* LoginVC.m in Sources */,
 				CCE3CA551C7EF5F100212D91 /* main.m in Sources */,
+				CCE3CB821C7F16A500212D91 /* RetrievePWVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
