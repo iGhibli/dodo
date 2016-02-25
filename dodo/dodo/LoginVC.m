@@ -26,12 +26,17 @@
     if (self.userNameTF.text.length == 0 || self.passWordTF.text.length == 0) {
         NSLog(@"账号和密码都不能为空！");
     }else {
-        [[EaseMob sharedInstance].chatManager asyncLoginWithUsername:self.userNameTF.text password:self.passWordTF.text completion:^(NSDictionary *loginInfo, EMError *error) {
-            if (!error && loginInfo) {
-                NSLog(@"登陆成功");
-            }
-        } onQueue:nil];
-
+        //先判断是否为自动登陆
+        BOOL isAutoLogin = [[EaseMob sharedInstance].chatManager isAutoLoginEnabled];
+        if (!isAutoLogin) {
+            [[EaseMob sharedInstance].chatManager asyncLoginWithUsername:self.userNameTF.text password:self.passWordTF.text completion:^(NSDictionary *loginInfo, EMError *error) {
+                if (!error && loginInfo) {
+                    UIStoryboard *ContentSB = [UIStoryboard storyboardWithName:@"Content" bundle:nil];
+                    [self presentViewController:[ContentSB instantiateInitialViewController] animated:YES completion:nil];
+                    NSLog(@"登陆成功");
+                }
+            } onQueue:nil];
+        }
     }
 }
 

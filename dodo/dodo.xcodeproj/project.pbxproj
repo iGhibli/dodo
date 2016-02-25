@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		CCE3CA551C7EF5F100212D91 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CCE3CA541C7EF5F100212D91 /* main.m */; };
 		CCE3CA581C7EF5F100212D91 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CCE3CA571C7EF5F100212D91 /* AppDelegate.m */; };
-		CCE3CA5B1C7EF5F100212D91 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCE3CA5A1C7EF5F100212D91 /* ViewController.m */; };
 		CCE3CA5E1C7EF5F100212D91 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCE3CA5C1C7EF5F100212D91 /* Main.storyboard */; };
 		CCE3CA601C7EF5F100212D91 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CCE3CA5F1C7EF5F100212D91 /* Assets.xcassets */; };
 		CCE3CA631C7EF5F100212D91 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCE3CA611C7EF5F100212D91 /* LaunchScreen.storyboard */; };
@@ -27,6 +26,7 @@
 		CCE3CB7C1C7F06C400212D91 /* LoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CCE3CB7B1C7F06C400212D91 /* LoginVC.m */; };
 		CCE3CB7F1C7F164200212D91 /* RegisterVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CCE3CB7E1C7F164200212D91 /* RegisterVC.m */; };
 		CCE3CB821C7F16A500212D91 /* RetrievePWVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CCE3CB811C7F16A500212D91 /* RetrievePWVC.m */; };
+		CCE3CB841C7F1ED100212D91 /* Content.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCE3CB831C7F1ED100212D91 /* Content.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,8 +34,6 @@
 		CCE3CA541C7EF5F100212D91 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CCE3CA561C7EF5F100212D91 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		CCE3CA571C7EF5F100212D91 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		CCE3CA591C7EF5F100212D91 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		CCE3CA5A1C7EF5F100212D91 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		CCE3CA5D1C7EF5F100212D91 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CCE3CA5F1C7EF5F100212D91 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CCE3CA621C7EF5F100212D91 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -142,6 +140,7 @@
 		CCE3CB7E1C7F164200212D91 /* RegisterVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterVC.m; sourceTree = "<group>"; };
 		CCE3CB801C7F16A500212D91 /* RetrievePWVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RetrievePWVC.h; sourceTree = "<group>"; };
 		CCE3CB811C7F16A500212D91 /* RetrievePWVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RetrievePWVC.m; sourceTree = "<group>"; };
+		CCE3CB831C7F1ED100212D91 /* Content.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Content.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -218,8 +217,6 @@
 		CCE3CAF31C7F02A200212D91 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				CCE3CA591C7EF5F100212D91 /* ViewController.h */,
-				CCE3CA5A1C7EF5F100212D91 /* ViewController.m */,
 				CCE3CB7A1C7F06C400212D91 /* LoginVC.h */,
 				CCE3CB7B1C7F06C400212D91 /* LoginVC.m */,
 				CCE3CB7D1C7F164200212D91 /* RegisterVC.h */,
@@ -234,6 +231,7 @@
 			isa = PBXGroup;
 			children = (
 				CCE3CA5C1C7EF5F100212D91 /* Main.storyboard */,
+				CCE3CB831C7F1ED100212D91 /* Content.storyboard */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -600,6 +598,7 @@
 				CCE3CA601C7EF5F100212D91 /* Assets.xcassets in Resources */,
 				CCE3CB691C7F033800212D91 /* EaseMob.bundle in Resources */,
 				CCE3CA5E1C7EF5F100212D91 /* Main.storyboard in Resources */,
+				CCE3CB841C7F1ED100212D91 /* Content.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -610,7 +609,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CCE3CA5B1C7EF5F100212D91 /* ViewController.m in Sources */,
 				CCE3CA581C7EF5F100212D91 /* AppDelegate.m in Sources */,
 				CCE3CB7F1C7F164200212D91 /* RegisterVC.m in Sources */,
 				CCE3CB7C1C7F06C400212D91 /* LoginVC.m in Sources */,
