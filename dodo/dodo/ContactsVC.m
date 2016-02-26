@@ -7,9 +7,10 @@
 //
 
 #import "ContactsVC.h"
+#import "EaseMob.h"
 
 @interface ContactsVC ()
-
+@property (nonatomic, strong) NSString *addContactID;
 @end
 
 @implementation ContactsVC
@@ -24,9 +25,58 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+#pragma mark - 获取好友列表
+    [[EaseMob sharedInstance].chatManager asyncFetchBuddyListWithCompletion:^(NSArray *buddyList, EMError *error) {
+        if (!error) {
+            NSLog(@"获取成功 -- %@",buddyList);
+            
+        }
+    } onQueue:nil];
+}
+
+- (IBAction)addContactAction:(UIBarButtonItem *)sender {
+    [self addContact];
+}
+
+- (void)addContact
+{
+//    self.addContactID = nil;
+    UIAlertController *alrtC = [UIAlertController alertControllerWithTitle:@"添加好友" message:@"请在输入框中填写要添加好友的ID！" preferredStyle:UIAlertControllerStyleAlert];
+    [alrtC addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+
+        textField.textAlignment = NSTextAlignmentCenter;
+        [textField addTarget:self action:@selector(textFieldValueChange:) forControlEvents:UIControlEventValueChanged];
+    }];
+    UIAlertAction *determineAction = [UIAlertAction actionWithTitle:@"添加" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+#pragma mark - 添加好友申请
+        if (self.addContactID.length != 0) {
+            EMError *error;
+            BOOL isSuccess = [[EaseMob sharedInstance].chatManager addBuddy:self.addContactID message:@"我想加您为好友" error:&error];
+            if (isSuccess && !error) {
+                NSLog(@"添加成功");
+            }
+        }else {
+            UIAlertController *popAC = [UIAlertController alertControllerWithTitle:@"失败" message:@"好友用户名不能为空！" preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction *action = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDestructive handler:nil];
+            [popAC addAction:action];
+            [self presentViewController:popAC animated:YES completion:nil];
+        }
+        
+    }];
+    UIAlertAction *cancelAction =[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+
+    }];
+    [alrtC addAction:determineAction];
+    [alrtC addAction:cancelAction];
+    [self presentViewController:alrtC animated:YES completion:nil];
+}
+
+- (void)textFieldValueChange:(UITextField *)tf
+{
+    self.addContactID = tf.text;
 }
 
 #pragma mark - Table view data source

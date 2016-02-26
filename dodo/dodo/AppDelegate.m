@@ -7,9 +7,10 @@
 //
 
 #import "AppDelegate.h"
+#import "NSString+Encryption.h"
 #import "EaseMob.h"
 
-@interface AppDelegate ()
+@interface AppDelegate ()<EMChatManagerLoginDelegate, EMChatManagerBuddyDelegate>
 
 @end
 
@@ -17,19 +18,48 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    
+    self.window = [[UIWindow alloc]init];
+    self.window.backgroundColor = [UIColor whiteColor];
+    [self.window makeKeyAndVisible];
     //registerSDKWithAppKey:注册的appKey。
     //apnsCertName:推送证书名(不需要加后缀)，默认@"istore_dev"。
     [[EaseMob sharedInstance] registerSDKWithAppKey:@"ighibli#dodo" apnsCertName:nil];
     [[EaseMob sharedInstance] application:application didFinishLaunchingWithOptions:launchOptions];
       
     // Override point for customization after application launch.
+    
+    //先判断是否为自动登陆
+    BOOL isAutoLogin = [[EaseMob sharedInstance].chatManager isAutoLoginEnabled];
+    if (isAutoLogin) {
+        //自动登录
+        [[EaseMob sharedInstance].chatManager asyncLoginWithUsername:[[NSString decryptUserNameAndPassWord] firstObject] password:[[NSString decryptUserNameAndPassWord] lastObject] completion:^(NSDictionary *loginInfo, EMError *error) {
+            if (!error && loginInfo) {
+                UIStoryboard *ContentSB = [UIStoryboard storyboardWithName:@"Content" bundle:nil];
+                self.window.rootViewController = [ContentSB instantiateInitialViewController];
+                NSLog(@"登陆成功");
+            }
+        } onQueue:nil];
+    }else {
+        //转到登录界面
+        UIStoryboard *MainSB = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        self.window.rootViewController = [MainSB instantiateInitialViewController];
+    }
     return YES;
 }
 
+- (void)willAutoLoginWithInfo:(NSDictionary *)loginInfo error:(EMError *)error
+{
+    
+}
+
+// 好友申请回调
+- (void)didReceiveBuddyRequest:(NSString *)username
+                       message:(NSString *)message
+{
+    
+}
+
 - (void)applicationWillResignActive:(UIApplication *)application {
-    // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-    // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
 }
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
@@ -41,7 +71,6 @@
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
-    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {

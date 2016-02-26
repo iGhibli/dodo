@@ -30,7 +30,6 @@
 		CCE3CB891C7F257800212D91 /* ConversationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CCE3CB881C7F257700212D91 /* ConversationVC.m */; };
 		CCE3CB8C1C7F259B00212D91 /* ContactsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CCE3CB8B1C7F259B00212D91 /* ContactsVC.m */; };
 		CCE3CB8F1C7F25A900212D91 /* SettingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = CCE3CB8E1C7F25A900212D91 /* SettingVC.m */; };
-		CCE3CB931C7F33F200212D91 /* Encrypter.m in Sources */ = {isa = PBXBuildFile; fileRef = CCE3CB921C7F33F200212D91 /* Encrypter.m */; };
 		CCE3CB971C7F356600212D91 /* NSString+Encryption.m in Sources */ = {isa = PBXBuildFile; fileRef = CCE3CB961C7F356600212D91 /* NSString+Encryption.m */; };
 		CCE3CBA11C7F397200212D91 /* AESCrypt.m in Sources */ = {isa = PBXBuildFile; fileRef = CCE3CB9A1C7F397200212D91 /* AESCrypt.m */; };
 		CCE3CBA21C7F397200212D91 /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = CCE3CB9C1C7F397200212D91 /* NSData+Base64.m */; };
@@ -156,8 +155,6 @@
 		CCE3CB8B1C7F259B00212D91 /* ContactsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactsVC.m; sourceTree = "<group>"; };
 		CCE3CB8D1C7F25A900212D91 /* SettingVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingVC.h; sourceTree = "<group>"; };
 		CCE3CB8E1C7F25A900212D91 /* SettingVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingVC.m; sourceTree = "<group>"; };
-		CCE3CB911C7F33F200212D91 /* Encrypter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Encrypter.h; sourceTree = "<group>"; };
-		CCE3CB921C7F33F200212D91 /* Encrypter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Encrypter.m; sourceTree = "<group>"; };
 		CCE3CB951C7F356600212D91 /* NSString+Encryption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Encryption.h"; sourceTree = "<group>"; };
 		CCE3CB961C7F356600212D91 /* NSString+Encryption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Encryption.m"; sourceTree = "<group>"; };
 		CCE3CB991C7F397200212D91 /* AESCrypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AESCrypt.h; sourceTree = "<group>"; };
@@ -592,8 +589,6 @@
 		CCE3CB901C7F328200212D91 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
-				CCE3CB911C7F33F200212D91 /* Encrypter.h */,
-				CCE3CB921C7F33F200212D91 /* Encrypter.m */,
 			);
 			name = Tools;
 			sourceTree = "<group>";
@@ -702,7 +697,6 @@
 				CCE3CA551C7EF5F100212D91 /* main.m in Sources */,
 				CCE3CBA41C7F397200212D91 /* NSString+Base64.m in Sources */,
 				CCE3CBA21C7F397200212D91 /* NSData+Base64.m in Sources */,
-				CCE3CB931C7F33F200212D91 /* Encrypter.m in Sources */,
 				CCE3CB821C7F16A500212D91 /* RetrievePWVC.m in Sources */,
 				CCE3CB971C7F356600212D91 /* NSString+Encryption.m in Sources */,
 				CCE3CB8F1C7F25A900212D91 /* SettingVC.m in Sources */,

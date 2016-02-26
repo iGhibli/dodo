@@ -25,20 +25,16 @@
 
 - (IBAction)loginAction:(UIButton *)sender {
     if (self.userNameTF.text.length == 0 || self.passWordTF.text.length == 0) {
-        NSLog(@"账号和密码都不能为空！");
+        NSLog(@"------------账号和密码都不能为空！");
     }else {
-        //先判断是否为自动登陆
-        BOOL isAutoLogin = [[EaseMob sharedInstance].chatManager isAutoLoginEnabled];
-        if (!isAutoLogin) {
-            [[EaseMob sharedInstance].chatManager asyncLoginWithUsername:self.userNameTF.text password:self.passWordTF.text completion:^(NSDictionary *loginInfo, EMError *error) {
-                if (!error && loginInfo) {
-                    UIStoryboard *ContentSB = [UIStoryboard storyboardWithName:@"Content" bundle:nil];
-                    [self presentViewController:[ContentSB instantiateInitialViewController] animated:YES completion:nil];
-                    [NSString encryptUserName:self.userNameTF.text andPassWord:self.passWordTF.text];
-                    NSLog(@"登陆成功");
-                }
-            } onQueue:nil];
-        }
+        [[EaseMob sharedInstance].chatManager asyncLoginWithUsername:self.userNameTF.text password:self.passWordTF.text completion:^(NSDictionary *loginInfo, EMError *error) {
+            if (!error && loginInfo) {
+                UIStoryboard *ContentSB = [UIStoryboard storyboardWithName:@"Content" bundle:nil];
+                [self presentViewController:[ContentSB instantiateInitialViewController] animated:YES completion:nil];
+                [NSString encryptUserName:self.userNameTF.text andPassWord:self.passWordTF.text];
+                NSLog(@"登陆成功");
+            }
+        } onQueue:nil];
     }
 }
 

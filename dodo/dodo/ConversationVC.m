@@ -7,6 +7,8 @@
 //
 
 #import "ConversationVC.h"
+#import "EaseMob.h"
+#import "NSString+Encryption.h"
 
 @interface ConversationVC ()
 
@@ -16,7 +18,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    [[EaseMob sharedInstance].chatManager asyncLoginWithUsername:[[NSString decryptUserNameAndPassWord] firstObject] password:[[NSString decryptUserNameAndPassWord] lastObject] completion:^(NSDictionary *loginInfo, EMError *error) {
+        if (!error) {
+            // 设置自动登录
+            [[EaseMob sharedInstance].chatManager setIsAutoLoginEnabled:YES];
+        }
+    } onQueue:nil];
     
 }
 
